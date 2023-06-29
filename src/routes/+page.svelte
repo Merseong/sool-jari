@@ -4,8 +4,8 @@
 
 	let searchValue = '';
 	let main;
-	let image;
-	let files;
+	let imageSrc = '';
+	let fileInput;
 
 	function search() {
 		console.log(searchValue);
@@ -22,9 +22,9 @@
 	}
 
 	function onImageUploaded() {
-		const [file] = files;
+		const [file] = fileInput.files;
 		if (file) {
-			image.src = URL.createObjectURL(file);
+			imageSrc = URL.createObjectURL(file);
 		}
 	}
 </script>
@@ -37,11 +37,19 @@
 		<input type="text" bind:value={searchValue} placeholder="검색할 술을 입력하세요" />
 		<button on:click={search}>검색</button>
 		<p>{searchValue}</p>
-		<img width="300em" src="#" alt="upload" bind:this={image} />
+		{#if imageSrc.length > 0}
+		<img src={imageSrc} alt="img">
+		{/if}
 	</div>
 </div>
 
-<input type="file" bind:files accept="image/*" on:change={onImageUploaded} />
+<form>
+	<input type="file" bind:this={fileInput} accept="image/*" on:change={onImageUploaded} />
+	<button on:click={() => {
+		imageSrc = "";
+		fileInput.value = "";
+	}}>이미지 초기화</button>
+</form>
 <button on:click={download}>다운로드</button>
 
 <style>
@@ -54,5 +62,11 @@
 		margin: 0.5em;
 		padding: 0.5em;
 		border: 1px solid black;
+	}
+
+	img {
+		height: 400px;
+		width: 300px;
+		object-fit: contain;
 	}
 </style>
