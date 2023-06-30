@@ -1,9 +1,6 @@
 module.exports = {
   root: true,
-  plugins: [
-    "eslint-plugin-prettier",
-    "eslint-config-prettier"
-  ],
+  plugins: ['eslint-plugin-prettier', 'eslint-config-prettier'],
   extends: ['eslint:recommended', 'plugin:svelte/recommended', 'prettier'],
   parserOptions: {
     sourceType: 'module',
