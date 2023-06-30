@@ -2,6 +2,7 @@
 	"recommendations": [
 		"fivethree.vscode-svelte-snippets",
 		"svelte.svelte-vscode",
-		"ardenivanov.svelte-intellisense"
+		"ardenivanov.svelte-intellisense",
+		"prisma.prisma"
 	]
 }
