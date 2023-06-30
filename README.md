@@ -1,17 +1,20 @@
-# create-svelte
+# Sool-Jari
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+안녕하세요
 
-## Creating a project
+## Prisma settings
 
-If you're seeing this, you've probably already done this step. Congrats!
+DB 만드는 명령어
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
+# 그냥 DB파일만 만들때
+npx prisma db push
 
-# create a new project in my-app
-npm create svelte@latest my-app
+# DB 테이블의 변경사항을 적용
+npx prisma migrate dev
+
+# 만들어진 DB를 확인하는 인터페이스
+npx prisma studio
 ```
 
 ## Developing

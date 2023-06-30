@@ -38,17 +38,19 @@
 		<button on:click={search}>검색</button>
 		<p>{searchValue}</p>
 		{#if imageSrc.length > 0}
-		<img src={imageSrc} alt="img">
+			<img src={imageSrc} alt="img" />
 		{/if}
 	</div>
 </div>
 
 <form>
 	<input type="file" bind:this={fileInput} accept="image/*" on:change={onImageUploaded} />
-	<button on:click={() => {
-		imageSrc = "";
-		fileInput.value = "";
-	}}>이미지 초기화</button>
+	<button
+		on:click={() => {
+			imageSrc = '';
+			fileInput.value = '';
+		}}>이미지 초기화</button
+	>
 </form>
 <button on:click={download}>다운로드</button>
 
