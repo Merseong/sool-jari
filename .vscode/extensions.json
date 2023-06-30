@@ -1,8 +1,9 @@
 {
-	"recommendations": [
-		"fivethree.vscode-svelte-snippets",
-		"svelte.svelte-vscode",
-		"ardenivanov.svelte-intellisense",
-		"prisma.prisma"
-	]
+  "recommendations": [
+    "fivethree.vscode-svelte-snippets",
+    "svelte.svelte-vscode",
+    "ardenivanov.svelte-intellisense",
+    "prisma.prisma",
+    "esbenp.prettier-vscode"
+  ]
 }
