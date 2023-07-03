@@ -2,7 +2,19 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {}
+    container: {
+      center: true
+    },
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#00ff00'
+        },
+        secondary: {
+          DEFAULT: '#00ee00'
+        }
+      }
+    }
   },
   plugins: []
 };

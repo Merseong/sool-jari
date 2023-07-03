@@ -23,6 +23,7 @@
         <td>{test.content}</td>
         <td
           ><button
+            class="px-3"
             on:click={async (e) => {
               await fetch(`/test/${test.id}`, {
                 method: 'DELETE'
