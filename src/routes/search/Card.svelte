@@ -1,7 +1,10 @@
 <script>
   export let baseContent = '';
-
-  console.log(baseContent);
+  export let linkTo = '/search';
 </script>
 
-<div class="borde rounded-md bg-primary">{baseContent}</div>
+<a class="rounded-md border bg-primary" href={linkTo}>
+  <div class="m-0 p-0">
+    {baseContent}
+  </div>
+</a>

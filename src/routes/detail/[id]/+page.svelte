@@ -2,9 +2,15 @@
   import { toBlob } from 'html-to-image';
   import { saveAs } from 'file-saver';
 
+  export let data;
+
   let main;
   let imageSrc = '';
   let fileInput;
+
+  $: alcData = data.alc;
+
+  console.log(data.alc);
 
   function download() {
     toBlob(main).then((blob) => {
@@ -24,7 +30,22 @@
   }
 </script>
 
-<div bind:this={main} />
+<div bind:this={main}>
+  <div>
+    {alcData.title}
+  </div>
+  <div>
+    {alcData.category}
+  </div>
+  <div>
+    {alcData.degree}도
+  </div>
+  <div>
+    {alcData.creator}
+  </div>
+
+  <img class="container max-h-96 object-contain" src={imageSrc} alt="" />
+</div>
 
 <form>
   <input

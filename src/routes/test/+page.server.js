@@ -1,8 +1,10 @@
-import { testDb } from '$lib/server/dbBase';
+import { prismaClient } from '$lib/server/dbBase';
 import { fail } from '@sveltejs/kit';
 
+const testDB = prismaClient.test;
+
 export const load = async () => {
-  const res = await testDb.findMany();
+  const res = await testDB.findMany();
   return { tests: res };
 };
 
@@ -14,19 +16,19 @@ export const actions = {
 
     if (!title) {
       return fail(400, {
-        error: 'Title must be need'
+        error: 'Title must be need',
       });
     }
 
-    const result = await testDb.create({
+    const result = await testDB.create({
       data: {
         title,
-        content
-      }
+        content,
+      },
     });
 
     console.log(result);
 
     return { success: true };
-  }
+  },
 };

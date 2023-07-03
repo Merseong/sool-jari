@@ -26,7 +26,7 @@
             class="px-3"
             on:click={async (e) => {
               await fetch(`/test/${test.id}`, {
-                method: 'DELETE'
+                method: 'DELETE',
               });
 
               data.tests = data.tests.filter((t) => t !== test);
