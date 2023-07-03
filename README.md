@@ -12,9 +12,16 @@ npx prisma db push
 
 # DB 테이블의 변경사항을 적용
 npx prisma migrate dev
+```
 
+별건 아닌 명령어들
+
+```bash
 # 만들어진 DB를 확인하는 인터페이스
 npx prisma studio
+
+# .prisma 파일을 이쁘게 만들어줌
+npx prisma format
 ```
 
 ## Developing

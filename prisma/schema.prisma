@@ -11,9 +11,27 @@ datasource db {
 }
 
 model Test {
-  id    Int   @id @default(autoincrement())
-  title     String
-  content   String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id      Int     @id @default(autoincrement())
+  title   String
+  content String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model Alcohol {
+  id           Int            @id @default(autoincrement())
+  title        String         @unique
+  category     String
+  degree       Int
+  creator      String
+  additionals  String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  AlcSearchKey AlcSearchKey[]
+}
+
+model AlcSearchKey {
+  searchKey     String  @id @unique
+  destinationId Int
+  destination   Alcohol @relation(fields: [destinationId], references: [id])
 }
