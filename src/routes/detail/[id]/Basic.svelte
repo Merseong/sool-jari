@@ -10,17 +10,19 @@
   };
 </script>
 
-<div id="alc-card" class="border border-black">
-  <div>
-    {alcData.title}
-  </div>
-  <div>
-    {alcData.category}
-  </div>
-  <div>
-    {alcData.degree}도
-  </div>
-  <div>
-    {alcData.creator}
+<div id="alc-card">
+  <div class="m-2 h-64 w-96 rounded-md border-2 border-black bg-white p-2">
+    <div>
+      {alcData.title}
+    </div>
+    <div>
+      {alcData.category}
+    </div>
+    <div>
+      {alcData.degree}도
+    </div>
+    <div>
+      {alcData.creator}
+    </div>
   </div>
 </div>

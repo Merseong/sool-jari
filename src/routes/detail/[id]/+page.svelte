@@ -18,9 +18,14 @@
   }
 </script>
 
-<Basic baseData={alcData} />
+<div class="grid grid-cols-2 divide-x">
+  <div class="px-2">table</div>
+  <div class="px-2">
+    <Basic baseData={alcData} />
 
-<button on:click={download}>다운로드</button>
+    <button on:click={download}>다운로드</button>
+  </div>
+</div>
 
 <style lang="postcss">
 </style>

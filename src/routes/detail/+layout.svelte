@@ -1,7 +1,8 @@
 <script>
-  import Header from '../Header.svelte';
+  import HeaderWithSearch from '../HeaderWithSearch.svelte';
 </script>
 
-<Header />
-
-<slot />
+<HeaderWithSearch />
+<div class="fixed left-0 right-0 top-16">
+  <slot />
+</div>
